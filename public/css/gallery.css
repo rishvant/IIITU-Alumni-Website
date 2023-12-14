@@ -1,0 +1,43 @@
+.main-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-gap: 0px;
+    /* Adjust the gap between images as needed */
+    justify-items: center;
+    /* Center-align the images within the grid cells */
+    border: solid 2px rgb(107, 107, 107);
+    border-radius: 5px;
+}
+
+/* Style for individual images */
+.main-image {
+    padding: 5px;
+    /* Adjust padding as needed */
+    position: relative;
+    /* Set the image container as a relative position for overlay */
+}
+
+/* Overlay on image hover */
+.main-image::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    /* Adjust the background color and opacity as needed */
+    opacity: 0;
+    transition: opacity 0.3s;
+    /* Add a smooth transition effect */
+}
+
+/* Show overlay on image hover */
+.main-image:hover::before {
+    opacity: 1;
+}
+
+/* Adjust image width if needed */
+.main-image img {
+    max-width: 100%;
+}

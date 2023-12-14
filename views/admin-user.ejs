@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/admin-user.css">
+	<link rel="stylesheet" href="css/admin-style.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <%- include("admin-navbar") %>
+
+    <section class="users">
+    <div class="cards">
+        <div class="card">
+            <div class="box-1">
+                <h1><%= data.length %></h1>
+                <h3>Alumni</h3>
+            </div>
+            <div class="icon-case">
+                <img src="students.png" alt="">
+            </div>
+        </div>
+        <div class="card">
+            <div class="box-1">
+                <h1>53</h1>
+                <h3>Events</h3>
+            </div>
+            <div class="icon-case">
+                <img src="teachers.png" alt="">
+            </div>
+        </div>
+        <div class="card">
+            <div class="box-1">
+                <h1><%= dataImages.length %></h1>
+                <h3>Gallery Photos</h3>
+            </div>
+            <div class="icon-case">
+                <img src="schools.png" alt="">
+            </div>
+        </div>
+        <div class="card">
+            <div class="box-1">
+                <h1>1</h1>
+                <h3>Verified User</h3>
+            </div>
+            <div class="icon-case">
+                <img src="income.png" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="new-students">
+        <div class="title">
+            <h2>Users</h2>
+            <a href="#" class="btn btn-1">View All</a>
+            <a href="/admin-adduser" class="btn">Add User</a>
+        </div>
+        <table>
+            <tr>
+                <th>Profile</th>
+                <th>Name</th>
+                <th>Batch/Branch</th>
+                <th>Roll No.</th>
+                <th>Verification</th>
+                <th>Action</th>
+            </tr>
+            <div class="user-data">
+                <% data.forEach(user => { %>
+            <tr>
+                <td><img src="uploads/<%= user.image %>" alt="Image"></td>
+                <td><%= user.name %> </td>
+                <td><%= user.year %>/<%= user.branch %> </td>
+                <td><%= user.roll %> </td>
+                <td class="verification-status">
+                    <% if (user.verified) { %>
+                        <span class="verified">Verified</span>
+                    <% } else { %>
+                        <span class="unverified">Not Verified</span>
+                    <% } %>
+                </td>
+                <td class="action-buttons">
+                    <% if (!user.verified) { %>
+                        <button class="verify-btn" data-user-id="<%= user._id %>">
+                            <i class="fa fa-check"></i> Verify
+                        </button>
+                    <% } %>
+                </td>
+                <td class="action-buttons">
+                    <a href="/admin-useredit"><button><i class="fa fa-edit"></i>Edit</button></a>
+                    <button><i class="fa fa-eye"></i> View</button>
+                    <button><i class="fa fa-trash"></i> Delete</button>
+            </td>
+            </tr>
+            <% }); %>
+            </div>
+        </table>
+    </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const verifyButtons = document.querySelectorAll('.verify-btn');
+    
+            verifyButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    const userId = this.getAttribute('data-user-id');
+    
+                    // Send AJAX request to the server to verify the user
+                    fetch(`/admin-user/${userId}`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ userId: userId })
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        // Update the verification status in the UI
+                        const verificationStatus = document.querySelector(`#${userId} .verification-status`);
+                        verificationStatus.innerHTML = '<span class="verified">Verified</span>';
+    
+                        // Hide the "Verify" button
+                        this.style.display = 'none';
+                    })
+                    .catch(error => console.error('Error:', error));
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

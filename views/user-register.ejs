@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/admin-users.css">
+    <link rel="stylesheet" href="https://jqueryvalidation.org/files/demo/site-demos.css">
+    <link rel="stylesheet" href="css/opensans-font.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/lightbox2@2.11.2/dist/css/lightbox.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/Google-Style-Login-.css">
+    <!-- Nice Select CSS -->
+    <link rel="stylesheet" href="css/nice-select.css">
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <!-- icofont CSS -->
+    <link rel="stylesheet" href="css/icofont.css">
+    <!-- Slicknav -->
+    <link rel="stylesheet" href="css/slicknav.min.css">
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet" href="css/owl-carousel.css">
+    <!-- Datepicker CSS -->
+    <link rel="stylesheet" href="css/datepicker.css">
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="css/animate.min.css">
+    <!-- Magnific Popup CSS -->
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/lightbox2@2.11.2/dist/css/lightbox.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Medipro CSS -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <title>Document</title>
+</head>
+
+<body>
+
+        <div class="page-content">
+            <div class="form-v4-content">
+                <form class="form-detail" action="/admin-adduser" method="POST" id="myform"
+                    enctype="multipart/form-data">
+                    <h2>ADD ALUMNI</h2>
+                    <div class="form-group">
+                        <div class="form-row form-row-1">
+                            <label for="name">Name</label>
+                            <input type="text" name="name" id="first_name" class="input-text" required="">
+                        </div>
+                        <div class="form-row form-row-1">
+                            <label for="roll">Roll No.</label>
+                            <input type="number" name="roll" id="last_name" class="input-text">
+                        </div>
+                        <div class="form-row form-row-1">
+                            <div class="form-group-1">
+                                <label for="gender">Gender</label>
+                                <select class="select" name="gender">
+                                    <option data-value="1" class="option selected ">Male</option>
+                                    <option data-value="2" class="option">Female</option>
+                                    <option data-value="3" class="option">Others</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row form-row-1">
+                            <div class="form-group-1">
+                                <label for="course">Course</label>
+                                <select class="select" name="course">
+                                    <option data-value="1" class="option selected ">-Select-</option>
+                                    <option data-value="2" class="option">B.Tech</option>
+                                    <option data-value="3" class="option">M.Tech</option>
+                                    <option data-value="4" class="option">PhD</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row form-row-1">
+                            <div class="form-group-1">
+                                <label for="branch">Branch</label>
+                                <select class="select" name="branch">
+                                    <option data-value="1" class="option selected ">-Select-</option>
+                                    <option data-value="2" class="option">CSE</option>
+                                    <option data-value="3" class="option">ECE</option>
+                                    <option data-value="4" class="option">IT</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-row form-row-1 ">
+                            <label for="father_name">Father's Name</label>
+                            <input type="text" name="father_name" id="first_name" class="input-text">
+                        </div>
+                        <div class="form-row form-row-1 ">
+                            <label for="profession">Profession</label>
+                            <input type="text" name="profession" id="first_name" class="input-text">
+                        </div>
+                        <div class="form-row form-row-1 ">
+                            <label for="email">E-Mail</label>
+                            <input type="email" name="email" id="first_name" class="input-text" required="">
+                        </div>
+                        <div class="form-row form-row-1 ">
+                            <label for="dob">Date of Birth</label>
+                            <input type="date" name="dob" id="first_name" class="input-text">
+                        </div>
+                        <div class="form-row form-row-1 ">
+                            <div class="form-group-1">
+                                <label for="year">Year of Graduation</label>
+                                <select class="select" name="year">
+                                    <option data-value="1" class="option selected ">-Select-</option>
+                                    <option data-value="2" class="option">2014</option>
+                                    <option data-value="3" class="option">2015</option>
+                                    <option data-value="4" class="option">2016</option>
+                                    <option data-value="5" class="option">2017</option>
+                                    <option data-value="5" class="option">2018</option>
+                                    <option data-value="5" class="option">2019</option>
+                                    <option data-value="5" class="option">2020</option>
+                                    <option data-value="5" class="option">2021</option>
+                                    <option data-value="5" class="option">2022</option>
+                                    <option data-value="5" class="option">2023</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-row form-row-1 ">
+                            <label for="phone">Mobile Number</label>
+                            <input type="tel" name="phone" id="password" class="input-text" required="">
+                        </div>
+                        <div class="form-row form-row-1 ">
+                            <label for="company">Current Company</label>
+                            <input type="text" name="company" id="password" class="input-text">
+                        </div>
+                        <div class="form-row form-row-1">
+                            <label for="linkedin">Linkedin Account Link</label>
+                            <input type="text" name="linkedin" id="password" class="input-text" required="">
+                        </div>
+                        <div class="form-row form-row-1">
+                            <label for="instagram">Instagram Account Link</label>
+                            <input type="text" name="instagram" id="password" class="input-text">
+                        </div>
+                        <div class="form-row form-row-1">
+                            <label for="github">Github Account Link</label>
+                            <input type="text" name="github" id="password" class="input-text">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-row form-row-1 ">
+                            <label for="password">Password</label>
+                            <input type="password" name="password" id="password" class="input-text" required>
+                        </div>
+                        <div class="form-row form-row-1 ">
+                            <label for="confirm_password"> Confirm Password</label>
+                            <input type="password" name="confirm_password" id="password" class="input-text" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-row form-row-1 ">
+                            <label for="image">Upload Profile Photo</label>
+                            <input type="file" name="image" id="password" class="input-text" accept=".jpg, .jpeg, .png" required="">
+                        </div>
+                    </div>
+
+                    <div class="form-row-last">
+                        <input type="submit" class="register" value="Add" href="/admin-adduser"">
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <%- include("footer.ejs") %>
+            <!-- jquery Min JS -->
+            <script src="js/jquery.min.js"></script>
+            <!-- jquery Migrate JS -->
+            <script src="js/jquery-migrate-3.0.0.js"></script>
+            <!-- jquery Ui JS -->
+            <script src="js/jquery-ui.min.js"></script>
+            <!-- Easing JS -->
+            <script src="js/easing.js"></script>
+            <!-- Color JS -->
+            <script src="js/colors.js"></script>
+            <!-- Popper JS -->
+            <script src="js/popper.min.js"></script>
+            <!-- Bootstrap Datepicker JS -->
+            <script src="js/bootstrap-datepicker.js"></script>
+            <!-- Jquery Nav JS -->
+            <script src="js/jquery.nav.js"></script>
+            <!-- Slicknav JS -->
+            <script src="js/slicknav.min.js"></script>
+            <!-- ScrollUp JS -->
+            <script src="js/jquery.scrollUp.min.js"></script>
+            <!-- Niceselect JS -->
+            <script src="js/niceselect.js"></script>
+            <!-- Tilt Jquery JS -->
+            <script src="js/tilt.jquery.min.js"></script>
+            <!-- Owl Carousel JS -->
+            <script src="js/owl-carousel.js"></script>
+            <!-- counterup JS -->
+            <script src="js/jquery.counterup.min.js"></script>
+            <!-- Steller JS -->
+            <script src="js/steller.js"></script>
+            <!-- Wow JS -->
+            <script src="js/wow.min.js"></script>
+            <!-- Magnific Popup JS -->
+            <script src="js/jquery.magnific-popup.min.js"></script>
+            <!-- Counter Up CDN JS -->
+            <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+            <!-- Bootstrap JS -->
+            <script src="js/bootstrap.min.js"></script>
+            <!-- Main JS -->
+            <script src="js/main.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/lightbox2@2.11.2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/lightbox2@2.11.2/dist/js/lightbox-plus-jquery.min.js"></script>
+
+    </body>
+
+</html>

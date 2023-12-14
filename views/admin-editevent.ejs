@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/admin-style.css">
+    <link rel="stylesheet" href="/css/admin-addevent.css">
+</head>
+
+<body>
+
+    <%- include("admin-navbar.ejs") %>
+
+        <div class="e-container">
+            <div class="head">
+                <h1>
+                    Add Event
+                </h1>
+            </div>
+
+            <form class="form" action="/admin/events/<%= event._id %>" method="POST" enctype="multipart/form-data">
+                <div class="details">
+                    <div class="detail-box box-1">
+                        <label for="title">Event Title</label>
+                        <input type="text" name="title" required value="<%= event.title %>">
+                    </div>
+
+                        <div class="event-image">
+                            <img src="/uploads/<%= event.image %>">
+                        </div>
+
+                    <div class="detail-box">
+                        <label for="summary">Event Summary</label>
+                        <input type="text" name="summary" value="<%= event.summary %>">
+                    </div>
+
+                    <div class="detail-box">
+                        <label for="date">Event Date</label>
+                        <input type="date" name="date" class="date" value="<%= event.date %>">
+                    </div>
+
+                    <div class="detail-box">
+                        <label for="detail">Event Details</label>
+                        <textarea rows="5" type="text" name="detail" class="summary-input"><%= event.detail %></textarea>
+                    </div>
+
+                    <div class="detail-box">
+                        <label for="image">Thumbnail Photo</label>
+                        <input type="file" name="image" href="/admin/events" class="input-text"
+                            accept=".jpg, .jpeg, .png" value="<%= event.image %>">
+                    </div>
+
+                    <div class="submit-btn">
+                        <input type="submit">
+                    </div>
+            </form>
+        </div>
+
+        </div>
+
+        <script src="js/admin-index.js"></script>
+</body>
+
+</html>

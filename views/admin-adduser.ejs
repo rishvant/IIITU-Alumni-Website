@@ -1,0 +1,148 @@
+	<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="css/admin-users.css">
+		<link rel="stylesheet" href="https://jqueryvalidation.org/files/demo/site-demos.css">
+		<link rel="stylesheet" href="css/opensans-font.css">
+		<link rel="stylesheet" href="css/admin-style.css">
+		<link rel="stylesheet" href="css/admin-gallery.css">
+		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/lightbox2@2.11.2/dist/css/lightbox.min.css">
+		<title>Document</title>
+	</head>
+	<body>
+
+		<%- include("admin-navbar.ejs")  %>
+
+		<div class="page-content">
+			<div class="form-v4-content">
+				<form class="form-detail" action="/admin-adduser" method="POST" id="myform" enctype="multipart/form-data">
+					<h2>ADD ALUMNI</h2>
+					<div class="form-group">
+						<div class="form-row form-row-1">
+							<label for="name">Name</label>
+							<input type="text" name="name" id="first_name" class="input-text">
+						</div>
+						<div class="form-row form-row-1">
+							<label for="roll">Roll No.</label>
+							<input type="text" name="roll" id="last_name" class="input-text">
+						</div>
+						<div class="form-row form-row-1">
+							<div class="form-group-1">
+								<label for="gender">Gender</label>
+								<select class="select" name="gender">
+										<option data-value="1" class="option selected ">Male</option>
+										<option data-value="2" class="option">Female</option>
+										<option data-value="3" class="option">Others</option>
+									</select>
+							</div>
+						</div>
+						<div class="form-row form-row-1">
+							<div class="form-group-1">
+								<label for="course">Course</label>
+								<select class="select" name="course">
+										<option data-value="1" class="option selected ">-Select-</option>
+										<option data-value="2" class="option">B.Tech</option>
+										<option data-value="3" class="option">M.Tech</option>
+										<option data-value="4" class="option">PhD</option>
+									</select>
+							</div>
+						</div>
+						<div class="form-row form-row-1">
+							<div class="form-group-1">
+								<label for="branch">Branch</label>
+								<select class="select" name="branch">
+										<option data-value="1" class="option selected ">-Select-</option>
+										<option data-value="2" class="option">CSE</option>
+										<option data-value="3" class="option">ECE</option>
+										<option data-value="4" class="option">IT</option>
+									</select>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="form-row form-row-1 ">
+							<label for="father_name">Father's Name</label>
+							<input type="text" name="father_name" id="first_name" class="input-text">
+						</div>
+						<div class="form-row form-row-1 ">
+							<label for="profession">Profession</label>
+							<input type="text" name="profession" id="first_name" class="input-text">
+						</div>
+						<div class="form-row form-row-1 ">
+							<label for="email">E-Mail</label>
+							<input type="text" name="email" id="first_name" class="input-text">
+						</div>
+						<div class="form-row form-row-1 ">
+							<label for="dob">Date of Birth</label>
+							<input type="date" name="dob" id="first_name" class="input-text">
+						</div>
+						<div class="form-row form-row-1 ">
+							<div class="form-group-1">
+								<label for="year">Year of Graduation</label>
+								<select class="select" name="year">
+										<option data-value="1" class="option selected ">-Select-</option>
+										<option data-value="2" class="option">2014</option>
+										<option data-value="3" class="option">2015</option>
+										<option data-value="4" class="option">2016</option>
+										<option data-value="5" class="option">2017</option>
+										<option data-value="5" class="option">2018</option>
+										<option data-value="5" class="option">2019</option>
+										<option data-value="5" class="option">2020</option>
+										<option data-value="5" class="option">2021</option>
+										<option data-value="5" class="option">2022</option>
+										<option data-value="5" class="option">2023</option>
+									</select>
+							</div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="form-row form-row-1 ">
+							<label for="phone">Mobile Number</label>
+							<input type="text" name="phone" id="password" class="input-text">
+						</div>
+						<div class="form-row form-row-1 ">
+							<label for="company">Current Company</label>
+							<input type="text" name="company" id="password" class="input-text">
+						</div>
+						<div class="form-row form-row-1">
+							<label for="linkedin">Linkedin Account Link</label>
+							<input type="text" name="linkedin" id="password" class="input-text">
+						</div>
+						<div class="form-row form-row-1">
+							<label for="instagram">Instagram Account Link</label>
+							<input type="text" name="instagram" id="password" class="input-text">
+						</div>
+						<div class="form-row form-row-1">
+							<label for="github">Github Account Link</label>
+							<input type="text" name="github" id="password" class="input-text">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="form-row form-row-1 ">
+								<label for="image">Upload Profile Photo</label>
+								<input type="file" name="image" id="password" class="input-text" accept=".jpg, .jpeg, .png">            
+						</div></div>
+
+					<div class="form-row-last">
+						<input type="submit" class="register" value="Add" href="/admin-adduser" onclick="myFunction()">
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/lightbox2@2.11.2/dist/js/lightbox-plus-jquery.min.js"></script>
+		<script src="js/admin-index.js"></script>
+		<script>
+		function myFunction() {
+			alert("User added successfully");
+			}
+		</script>
+	</body>
+	</html>

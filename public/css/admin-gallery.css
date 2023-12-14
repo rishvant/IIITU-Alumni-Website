@@ -1,0 +1,79 @@
+/* Apply basic styling to the gallery container */
+@import url(
+"https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+*{
+    font-family: "Poppins",sans-serif;
+}
+
+.gallery {
+    max-width: 80%;
+    margin-left: 15%;
+    margin-top: 2%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Adjust the column width as needed */
+    grid-gap: 5px; /* Adjust the gap between images as needed */
+    justify-items: center; /* Center-align the images within the grid cells */
+    border: solid 1px rgb(107, 107, 107);
+}
+
+/* Style for individual images */
+.image {
+    border: 1px solid #ddd; /* Add a border to images if desired */
+    padding: 5px; /* Adjust padding as needed */
+    position: relative; /* Set the image container as a relative position for overlay */
+}
+
+/* Overlay on image hover */
+.image::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Adjust the background color and opacity as needed */
+    opacity: 0;
+    transition: opacity 0.3s; /* Add a smooth transition effect */
+}
+
+/* Show overlay on image hover */
+.image:hover::before {
+    opacity: 1;
+}
+
+/* Adjust image width if needed */
+.image img {
+    max-width: 100%;
+}
+.inner{
+    position: relative;
+}
+.remove-icon {
+    position: absolute;
+    margin-bottom: 7px;
+    bottom: 0;
+    right: 0;
+    background: red;
+    color: white;
+    padding: 5px;
+    cursor: pointer;
+}
+.inner{
+    padding: 0%;
+}
+.add-btn{
+    margin-top: 2%;
+    margin-left: 15%;
+    background-color: #4b49ac;
+    color: white;
+    padding: 1%;
+    border: #0c007d solid 2px;
+    font-size: 15px;
+    border-radius: 5px;
+}
+.add-btn:hover{
+    cursor: pointer;
+    background-color: #4b49acc6;
+    transition: all 0.2s;
+}

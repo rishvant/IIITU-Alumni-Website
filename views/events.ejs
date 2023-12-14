@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <link rel="stylesheet" href="/css/events.css">
+</head>
+<body>
+    <div class="container">
+        <div class="head">
+            <h1>Events</h1>
+        </div>
+        <% events.forEach(event => { %>
+        <div class="item">
+            <div class="img">
+                <img src="/uploads/image-1700769300874.jpg">
+            </div>
+            <div class="content">
+                <h4><%= event.title %></h4>
+                <p><%= event.summary %></p>
+            </div>
+        </div>
+        <% }); %>
+    </div>
+</body>
+</html>

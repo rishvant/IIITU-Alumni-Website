@@ -1,0 +1,90 @@
+.e-container{
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+    margin-left: 100px;
+    width: 70%;
+    z-index: -1000;
+}
+
+.head{
+    text-align: center;
+}
+
+.deatails{
+    display: flex;
+    flex-direction: column;
+}
+
+.detail-box{
+    display: flex;
+    flex-direction: column;
+    margin-top: 2%;
+}
+
+input, label{
+    width: 30%;
+    height: auto;
+    box-sizing: border-box;
+}
+
+.summary-input{
+    width: 65%;
+    height: 10vh;
+    text-align: left;
+    vertical-align: top;
+}
+
+input[type="date"]{
+    width: 20%;
+}
+
+input:focus {
+    outline: none;
+    border-color: #4c74af;
+    box-shadow: 0 0 5px rgba(76, 109, 175, 0.5)
+}
+
+input[type="date"],input[type="text"],input[type="file"],input[type="submit"],textarea[type="text"]{
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 8px;
+    margin-left: -1px;
+}
+
+input[type="date"],input[type="file"],input[type="submit"]{
+    cursor: pointer;
+}
+
+input[type="date"]::placeholder {
+    color: #999;
+}
+
+input[type="submit"]{
+    background-color: #3786bd;
+    color: white;
+    font-weight: bold;
+    width: 10%  ;
+}
+
+.event-image{
+    position: absolute;
+    margin-left: 45%;
+    margin-top: -5%;
+}
+
+.event-image img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
