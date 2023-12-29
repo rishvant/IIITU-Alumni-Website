@@ -4,8 +4,7 @@
 
 <h2>Project Screenshots:</h2>
 
-<img src="![Screenshot 2023-12-15 145742](https://github.com/rishvant/IIITU-Alumni-Website/assets/118117096/1dfb641f-f722-4936-95e7-569725ee2384)
-" alt="project-screenshot" width="50" height="50/">
+![Screenshot 2023-12-15 145742](https://github.com/rishvant/IIITU-Alumni-Website/assets/118117096/1dfb641f-f722-4936-95e7-569725ee2384)
 
 <img src="" alt="project-screenshot" width="400" height="400/">
 
